@@ -20,7 +20,7 @@ def qimage_to_array(image):
     numpy_array = np.array(ptr).reshape(image.height(), image.width(), 1)
 
     # using the OpenCV library to display the image after conversion
-    cv2.imshow('Check if the function works!', numpy_array)
+    # cv2.imshow('Check if the function works!', numpy_array)
     return numpy_array
     
 
@@ -35,12 +35,12 @@ def predict(image, model):
     numpy_array = qimage_to_array(image)
 
     # use of the OpenCV library to resize the image to the size of the images used in the MNIST file
-    numpy_array = cv2.resize(numpy_array, (28,28))
-
+    numpy_array = cv2.resize(numpy_array, (28, 28))
     # using the OpenCV library to display the image after conversion
-    cv2.imshow('Check if the function works!!', numpy_array)
-
-    return 0
+    # cv2.imshow('Check if the function works!!', numpy_array)
+    numpy_array = numpy_array.reshape((1, 28, 28, 1))
+    result = np.argmax(model.predict(numpy_array))
+    return result
 
 
 def get_model():
