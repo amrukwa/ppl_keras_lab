@@ -49,4 +49,5 @@ def get_model():
 
      You should add the appropriate code for loading of the model and weights
     """
-    return None  
+    model = load_model('results/model_file')
+    return model

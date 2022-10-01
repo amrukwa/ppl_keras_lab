@@ -36,6 +36,9 @@ model = Sequential()
 # Add first layer, responsible for image data receive - number of neurons = number of pixels
 model.add(Dense(num_pixels, input_dim=num_pixels, kernel_initializer='normal', activation='relu'))
 
+# Add intermediate layer
+model.add(Dense(20, kernel_initializer='normal', activation='relu'))
+
 # Addition of a second layer responsible for the class - number of neurons = number of classes
 model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
 

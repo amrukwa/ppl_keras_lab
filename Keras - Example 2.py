@@ -38,6 +38,11 @@ model.add(layers.MaxPooling2D((2, 2)))
 # Addition of a second convolution layer
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 
+# Added layers
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Dropout(0.5))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
 # Addition of a 2D to 1D data flattening layer
 model.add(layers.Flatten())
 
@@ -55,6 +60,10 @@ model.compile(optimizer='rmsprop',
 history = model.fit(train_images, train_labels, validation_data=(test_images, test_labels), epochs=5, batch_size=64, verbose=1)
 
 print(history.history)
+
+# Save the model
+model.save('results/model_file')
+
 # learning history ploting
 plt.subplot(2, 1, 1)
 plt.plot(history.history['acc'])
