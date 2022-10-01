@@ -40,7 +40,6 @@ model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 
 # Added layers
 model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Dropout(0.5))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 
 # Addition of a 2D to 1D data flattening layer
