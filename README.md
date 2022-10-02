@@ -9,4 +9,5 @@ Solution for Python Programming Language laboratory on Keras
 The loss and accuracy plots from the training are available in *results* folder.  
 2. We added file saving and loading to second example file as well as `get_model` function in `Keras_PyQt_Paint_Model.py` file.  
 3. We modified the prediction function and adapted it to return the index of the prediction array, as well as - after checking the specified functions and commenting the test code - modified this function to work with convolutional networks by modyfing the input a little bit.
-4. After completing the steps as specified in the previous point, the application works on the fly, returning correct predictions.
+4. After completing the steps as specified in the previous point, the application works on the fly, returning correct predictions.  
+5. We built a simple convolutional network for the CIFAR-10 dataset. The code is in the `Task5.py` file.
